@@ -1,0 +1,15 @@
+GTSRB/
+.vscode/settings.json
+X.pickle
+trafficsigns.model/variables/variables.data-00001-of-00002
+trafficsigns.model/variables/variables.index
+trafficsigns.model/variables/variables.data-00000-of-00002
+trafficsigns.model/saved_model.pb
+X_training.pickle
+logs/3-conv-64-nodes-0-dense-1572646179/train/events.out.tfevents.1572646181.DESKTOP-I43J9C3.19152.330.v2
+logs/3-conv-64-nodes-0-dense-1572651657/train/events.out.tfevents.1572651657.DESKTOP-I43J9C3.3712.330.v2
+.vscode/launch.json
+__pycache__/readTrafficSigns.cpython-36.pyc
+__pycache__/create_signs_training_data.cpython-36.pyc
+y.pickle
+y_training.pickle

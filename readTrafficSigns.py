@@ -5,10 +5,6 @@ import csv
 # arguments: path to the traffic sign data, for example './GTSRB/Training'
 # returns: list of images, list of corresponding labels 
 def readTrafficSigns(rootpath):
-    '''Reads traffic sign data for German Traffic Sign Recognition Benchmark.
-
-    Arguments: path to the traffic sign data, for example './GTSRB/Training'
-    Returns:   list of images, list of corresponding labels'''
     images = [] # images
     labels = [] # corresponding labels
     # loop over all 42 classes
@@ -16,7 +12,7 @@ def readTrafficSigns(rootpath):
         prefix = rootpath + '/' + format(c, '05d') + '/' # subdirectory for class
         gtFile = open(prefix + 'GT-'+ format(c, '05d') + '.csv') # annotations file
         gtReader = csv.reader(gtFile, delimiter=';') # csv parser for annotations file
-        gtReader.next() # skip header
+        next(gtReader) # skip header
         # loop over all images in current annotations file
         for row in gtReader:
             images.append(plt.imread(prefix + row[0])) # the 1th column is the filename
