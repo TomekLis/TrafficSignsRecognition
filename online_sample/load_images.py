@@ -7,7 +7,7 @@ import cv2
 import os
 
 from sklearn.model_selection import train_test_split
-# from skimage.color import rgb2grey
+from skimage.color import rgb2grey
 
 NUM_CLASSES = 43
 np.random.seed(42)
@@ -22,8 +22,8 @@ image_labels = []
 for i in range(NUM_CLASSES):
     image_path = data_path + '/' + format(i, '05d') + '/'
     for img in glob.glob(image_path + '*.ppm'):
-        image = cv2.imread(img, cv2.IMREAD_GRAYSCALE)
-        # image = rgb2grey(image)
+        image = cv2.imread(img)
+        image = rgb2grey(image)
         image = (image / 255.0) # rescale
         image = cv2.resize(image, (32, 32)) #resize
         images.append(image)
