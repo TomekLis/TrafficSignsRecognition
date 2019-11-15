@@ -13,3 +13,11 @@ __pycache__/readTrafficSigns.cpython-36.pyc
 __pycache__/create_signs_training_data.cpython-36.pyc
 y.pickle
 y_training.pickle
+test_X.pickle
+test_y.pickle
+train_X.pickle
+train_y.pickle
+*.jfif
+*.pb
+traffic_signs.model/variables/variables.data-00000-of-00002
+traffic_signs.model/variables/variables.data-00001-of-00002
