@@ -3,8 +3,11 @@ import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import pickle
+import glob 
+from skimage.color import rgb2grey
 
-value=1000
+
+value=1002
 
 pickle_in = open("train_X.pickle","rb")
 train_X = pickle.load(pickle_in)
@@ -24,9 +27,11 @@ model.summary()
 
 def prepare(img_value):
     plt.imshow(img_value.reshape(32, 32), cmap='gray')
+    # plt.imshow(img_value, cmap='gray')
     plt.show()
 
     img = np.expand_dims(img_value, axis=0)
+    # img = np.expand_dims(img, axis=3)
     return img
 
 
@@ -47,8 +52,15 @@ def predict_classes(model, images_test, labels_test):
     # And predicted labels
     return correct, labels_pred
 
+image = cv2.imread('14.png')
+image = rgb2grey(image)
+image = (image / 255.0) # rescale
+image = cv2.resize(image, (32, 32))
+
 isCorrect, lables_pred = predict_classes(model, prepare(test_X[value]), test_y[value])
+# isCorrect, lables_pred = predict_classes(model, prepare(image), 14)
+# isCorrect, lables_pred = predict_classes(model, test_X[value], test_y[value])
 print(isCorrect[0])
 print(lables_pred[0])
-print(np.argmax(test_y[value]))
+# print(np.argmax(test_y[value]))
 # print(class_names[int(lables_pred)])

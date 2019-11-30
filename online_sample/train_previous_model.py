@@ -20,7 +20,7 @@ test_X = pickle.load(pickle_in)
 pickle_in = open("test_y.pickle","rb")
 test_y = pickle.load(pickle_in)
 
-model = tf.keras.models.Sequential() # sequential API - used for 
+model = tf.keras.models.Sequential()
 input_shape = (32, 32, 1) # grey-scale images of 32x32
 
 model.add(tf.keras.layers.Conv2D(32, (5, 5), padding='same', 
@@ -29,15 +29,6 @@ model.add(tf.keras.layers.BatchNormalization(axis=-1))
 model.add(tf.keras.layers.MaxPooling2D(pool_size=(2, 2)))
 model.add(tf.keras.layers.Dropout(0.2))
         
-model.add(tf.keras.layers.Conv2D(64, (5, 5), padding='same', 
-                                 activation='relu'))
-model.add(tf.keras.layers.BatchNormalization(axis=-1))
-model.add(tf.keras.layers.Conv2D(128, (5, 5), padding='same', 
-                                 activation='relu')) #
-model.add(tf.keras.layers.BatchNormalization(axis=-1))
-model.add(tf.keras.layers.MaxPooling2D(pool_size=(2, 2)))
-model.add(tf.keras.layers.Dropout(0.2))
-
 model.add(tf.keras.layers.Flatten())
 model.add(tf.keras.layers.Dense(512, activation='relu'))
 model.add(tf.keras.layers.BatchNormalization())
@@ -66,4 +57,5 @@ plt.xlabel('Epoch')
 plt.ylabel('Loss/Accuracy')
 plt.legend()
 plt.show()
-# model.save('traffic_signs.model')
+plt.savefig("previous_version.png")
+# model.save('traffic_signs_previous.model')
