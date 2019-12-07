@@ -41,3 +41,14 @@ presentation_code/__pycache__/predict_custom_image.cpython-36.pyc
 presentation_code/__pycache__/train_model.cpython-36.pyc
 training_images.pickle
 training_labels.pickle
+*.pickle
+traffic_sign_full_training_set_3.model/variables/variables.index
+traffic_sign_full_training_set.model/variables/variables.index
+final_model_traffic_signs.model/variables/variables.index
+final_model_traffic_signs.model/variables/variables.data-00000-of-00002
+traffic_signs.model/variables/variables.index
+traffic_signs_previous.model/variables/variables.data-00000-of-00002
+traffic_signs_previous.model/variables/variables.index
+traffic_signs.model/variables/variables.index
+traffic_signs.model/variables/variables.index
+traffic_signs.model/variables/variables.index
